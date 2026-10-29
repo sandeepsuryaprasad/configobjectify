@@ -1,8 +1,8 @@
 ## configobjectify
 
-[![CI](https://github.com/sandeepsuryaprasad/jsonobjectify/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sandeepsuryaprasad/jsonobjectify/actions/workflows/ci.yml)
-[![Development Status](https://img.shields.io/pypi/status/jsonobjectify)](https://pypi.org/project/jsonobjectify/)
-[![Python versions](https://img.shields.io/pypi/pyversions/jsonobjectify?label=Python)](https://pypi.org/project/jsonobjectify/)
+[![CI](https://github.com/sandeepsuryaprasad/configobjectify/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sandeepsuryaprasad/configbjectify/actions/workflows/ci.yml)
+[![Development Status](https://img.shields.io/pypi/status/configobjectify)](https://pypi.org/project/configobjectify/)
+[![Python versions](https://img.shields.io/pypi/pyversions/configobjectify?label=Python)](https://pypi.org/project/configobjectify/)
 
 A lightweight Python library that provides an object-oriented 
 interface for accessing values from INI configuration files. Instead of retrieving 
