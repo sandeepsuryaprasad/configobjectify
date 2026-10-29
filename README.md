@@ -27,7 +27,7 @@ device_name = Pixel
 model = Pixel 10
 os_version = 16
 ```
-Import Config and specify the configuration file and section,
+
 ```console
 >>> from configobjectify import Config
 >>> config = Config("config.ini", "APPLE")
@@ -50,7 +50,7 @@ Import Config and specify the configuration file and section,
 ```
 NOTE: Section names are normalized to uppercase by the library before lookup.
 
-## Handling missing configuration keys
+### Handling missing configuration keys
 ```console
 >>> config = Config("config.ini", "APPLE")
 >>> config.country_of_origin.value
