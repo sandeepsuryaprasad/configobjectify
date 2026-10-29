@@ -1,48 +1,46 @@
 from pathlib import Path
-from configparser import ConfigParser
+from configparser import ConfigParser, SectionProxy
 from typing import Optional
 
 
 class Config:
-    """Provides a convenient way to access configuration values by section.
-    The class reads configuration data from `config.ini` and exposes
-    configuration keys through attribute access. A configuration section
-    is selected when the instance is created, and individual values can
-    then be accessed using the `value` property.
-
-    Args:
-        section: Name of the configuration section to access.
-
-    Raises:
-        KeyError: If the specified section does not exist in the
-            configuration file.
-    """
-
-    def __init__(self, filepath: str, section: str):
+    def __init__(self, filepath: str | Path, section: str):
         self.section: str = section.upper()
         self.config_file = self._get_config_file(filepath)
         self._parser: ConfigParser = self._get_parser()
-        self._data: dict = self._parse_to_dict
+        self._data: SectionProxy = self._parse_to_dict
         self._attr: Optional[str] = None
 
-    def _get_config_file(self, filename) -> Path:
+    def _get_config_file(self, filename: str | Path) -> Path:
+        """Validate the configuration file path and return it as a Path object.
+
+        Args:
+        filename: Path to the configuration file.
+
+        Returns:
+        A Path object representing the validated INI file.
+
+        Raises:
+        FileNotFoundError: If the path does not point to an existing file.
+        ValueError: If the file does not have an .ini extension.
+        """
         path = Path(filename)
         if not path.is_file():
             raise FileNotFoundError(f"{filename!r} not found")
-        if not path.suffix.lower() == ".ini":
+        if path.suffix.lower() != ".ini":
             raise ValueError(f"Invalid file extension: {path.suffix!r}")
         return path
 
     def _get_parser(self) -> ConfigParser:
         """Return a configured `ConfigParser` instance.
-        The parser reads configuration data from `config.ini`.
+        The parser reads configuration data from `valid.ini`.
         """
         parser = ConfigParser()
         parser.read(self.config_file)
         return parser
 
     @property
-    def _parse_to_dict(self) -> dict:
+    def _parse_to_dict(self) -> SectionProxy:
         """Return the selected configuration section as a dictionary.
         Each configuration key in the selected section is stored as a
         key-value pair in the returned dictionary.
@@ -55,11 +53,11 @@ class Config:
             KeyError: If the selected section does not exist.
         """
         if not self._parser.has_section(self.section):
-            raise KeyError(f"Invalid section {self.section}")
+            raise KeyError(f"Invalid section {self.section!r}")
         return self._parser[self.section]
 
     @property
-    def value(self):
+    def value(self) -> str:
         """Return the value of the most recently accessed configuration key.
         Returns:
             The configuration value associated with the accessed key,
