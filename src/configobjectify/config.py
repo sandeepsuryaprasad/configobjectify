@@ -1,5 +1,5 @@
-from pathlib import Path
 from configparser import ConfigParser, SectionProxy
+from pathlib import Path
 from typing import Optional
 
 
