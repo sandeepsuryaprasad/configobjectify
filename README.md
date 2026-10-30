@@ -21,7 +21,7 @@ device_name = iPhone
 model = iPhone 17
 os_version = 26.0
 
-[ANDROID]
+[GOOGLE]
 device_name = Pixel
 model = Pixel 10
 os_version = 16
@@ -39,7 +39,7 @@ os_version = 16
 ```
 ### Selecting a different section
 ```console
->>> config = Config("config.ini", "ANDROID")
+>>> config = Config("config.ini", "GOOGLE")
 >>> config.device_name.value
 'Pixel'
 >>> config.model.value
