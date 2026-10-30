@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "configobjectify"
-version = "0.1.0"
+version = "0.2.0"
 description = "A lightweight Python library for converting Configuration Files into Python Objects."
 readme = "README.md"
 requires-python = ">=3.12"
