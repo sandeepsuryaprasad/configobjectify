@@ -1,7 +1,7 @@
 import keyword
-from re import sub
 from configparser import ConfigParser, SectionProxy
 from pathlib import Path
+from re import sub
 from typing import Optional
 
 
