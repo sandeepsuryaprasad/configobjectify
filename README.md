@@ -39,7 +39,7 @@ os_version = 16
 ```
 ### Selecting a different section
 ```console
->>> config = Config("config.ini", "GOOGLE")
+>>> config = Config("/path/to/config.ini", "GOOGLE")
 >>> config.device_name.value
 'Pixel'
 >>> config.model.value
