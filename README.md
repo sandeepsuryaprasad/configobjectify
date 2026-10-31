@@ -56,7 +56,7 @@ NOTE: Section names are normalized to uppercase by the library before lookup.
 >>> ''
 ```
 ### Accessing Invalid Python identifies/keywords with Normalized Keys
-Consider below configuration file,
+Consider the below configuration file.
 ```console
 [APPLE]
 device.name = iPhone
