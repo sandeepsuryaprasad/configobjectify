@@ -1,3 +1,5 @@
+import keyword
+from re import sub
 from configparser import ConfigParser, SectionProxy
 from pathlib import Path
 from typing import Optional
@@ -39,6 +41,12 @@ class Config:
         parser.read(self.config_file)
         return parser
 
+    def _normalize_key(self, key):
+        normalized_key = sub(r"[-.\s]+", "_", key)
+        if keyword.iskeyword(normalized_key):
+            normalized_key = "_" + normalized_key
+        return normalized_key
+
     @property
     def _parse_to_dict(self) -> SectionProxy:
         """Return the selected configuration section as a dictionary.
@@ -54,7 +62,9 @@ class Config:
         """
         if not self._parser.has_section(self.section):
             raise KeyError(f"Invalid section {self.section!r}")
-        return self._parser[self.section]
+        temp_data = self._parser[self.section]
+        return {self._normalize_key(key): value for key, value in temp_data.items()}
+
 
     @property
     def value(self) -> str:
