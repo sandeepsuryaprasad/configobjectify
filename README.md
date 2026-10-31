@@ -55,7 +55,29 @@ NOTE: Section names are normalized to uppercase by the library before lookup.
 >>> config.country_of_origin.value  # returns an empty string
 >>> ''
 ```
+### Accessing Invalid Python identifies/keywords with Normalized Keys
+Consider below configuration file,
+```console
+[APPLE]
+device.name = iPhone
+class = First
+os version = 26.0
+model-name = iPhone17
+```
+- Hyphens, periods and whitespace are normalized to underscores.
+- Python keywords are prefixed with an underscore.
 
+```console
+>>> config = Config("config.ini", "APPLE")
+>>> config.device_name.value
+'iPhone'
+>>> config._class.value
+'First'
+>>> config.os_version.value
+'26.0'
+>>> config.model_name.value
+'iPhone17'
+```
 ### Installed version
 To get to know the version of `configobjectify`,
 ```console
