@@ -52,7 +52,7 @@ NOTE: Section names are normalized to uppercase by the library before lookup.
 ### Handling missing configuration keys
 ```console
 >>> config = Config("config.ini", "APPLE")
->>> config.country_of_origin.value
+>>> config.country_of_origin.value  # returns an empty string
 >>> ''
 ```
 
