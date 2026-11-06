@@ -1,7 +1,7 @@
 ## configobjectify
 
 [![CI](https://github.com/sandeepsuryaprasad/configobjectify/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sandeepsuryaprasad/configbjectify/actions/workflows/ci.yml)
-[![PyPI version](https://img.shields.io/pypi/v/configobjectify)](https://pypi.org/project/configobjectify/)
+[![Development Status](https://img.shields.io/pypi/status/configobjectify)](https://pypi.org/project/configobjectify/)
 [![Total Downloads](https://static.pepy.tech/badge/configobjectify)](https://pepy.tech/project/configobjectify)
 
 A lightweight Python library that provides an object-oriented 
