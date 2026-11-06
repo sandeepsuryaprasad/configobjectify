@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/sandeepsuryaprasad/configobjectify/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sandeepsuryaprasad/configbjectify/actions/workflows/ci.yml)
 [![Development Status](https://img.shields.io/pypi/status/configobjectify)](https://pypi.org/project/configobjectify/)
-[![Total Downloads](https://static.pepy.tech/badge/configobjectify)](https://pepy.tech/project/configobjectify)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/configobjectify?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/configobjectify)
 
 A lightweight Python library that provides an object-oriented 
 interface for accessing values from INI configuration files. Instead of retrieving 
